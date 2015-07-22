@@ -2,7 +2,7 @@
 
 import os
 
-REPO_NAME = "france-by-number"  # Used for FREEZER_BASE_URL
+REPO_NAME = "france"  # Used for FREEZER_BASE_URL
 DEBUG = True
 
 # Assumes the app is located in the same directory
