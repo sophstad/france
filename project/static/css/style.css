@@ -1,0 +1,25 @@
+body {
+  background-color: rgb(26, 181, 181);
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.5;
+}
+h1 {
+  color: rgb(17, 97, 97);
+  font-weight: 900;
+}
+p {
+  font-weight: 300;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+/* Immutable CSS Classes */
+.bold {
+  font-weight: 700;
+}
+.lh1 {
+  line-height: 1;
+}
+.m0 {
+  margin: 0;
+}
