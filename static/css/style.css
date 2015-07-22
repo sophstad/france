@@ -1,16 +1,24 @@
 body {
   background-color: rgb(26, 181, 181);
-  font-family: 'Roboto', sans-serif;
+  color: rgb(14, 78, 78);
+  font-family: 'Input Sans Narrow', 'Roboto', sans-serif;
   line-height: 1.5;
+  margin: 0;
 }
 h1 {
   color: rgb(17, 97, 97);
+  font-size: 4rem;
   font-weight: 900;
 }
 p {
   font-weight: 300;
   margin-top: 0;
   margin-bottom: 1rem;
+}
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 64em;
 }
 
 /* Immutable CSS Classes */
@@ -22,4 +30,17 @@ p {
 }
 .m0 {
   margin: 0;
+}
+
+/* Columns */
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after { clear: both; }
+.col-1-of-3 {
+  box-sizing: border-box;
+  float: left;
+  width: 33.333333%;
 }
