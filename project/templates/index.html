@@ -6,14 +6,20 @@
 <div class="container">
   <div class="clearfix">
     <div class="col-1-of-3">
-      <h1 class="m0 lh1">7:02</h1><p class="m0 lh1">Hours of sleep each night</p>
+      <h1 class="m0 lh1">6:47</h1><p class="m0 lh1">Time asleep each night</p>
     </div>
     <div class="col-1-of-3">
-      <h1 class="m0 lh1">3.4</h1><p class="m0 lh1">Metro rides per day</p>
+      <h1 class="m0 lh1">{{ metroAverage }}</h1><p class="m0 lh1">Metro rides per day</p>
     </div>
     <div class="col-1-of-3">
-      <h1 class="m0 lh1">142</h1><p class="m0 lh1">Photos taken </p>
+      <h1 class="m0 lh1">283</h1><p class="m0 lh1">Photos taken</p>
+    </div>
+    <div class="col-1-of-3">
+      <h1 class="m0 lh1">{{ temperatureAverage }}&#176;</h1><p class="m0 lh1">Average temperature</p>
     </div>
   </div>
+</div>
+<div class="container">
+  {% pie_chart workingChart %}
 </div>
 {% endblock %}
