@@ -389,7 +389,7 @@
     // Set chart options
     defaultOptions = {
       chartArea: {},
-      fontName: "'Lucida Grande', 'Lucida Sans Unicode', Verdana, Arial, Helvetica, sans-serif",
+      fontName: "'Input Sans Narrow', Arial, Helvetica, sans-serif",
       pointSize: 6,
       legend: {
         textStyle: {
@@ -521,7 +521,17 @@
         var chart = new google.visualization.PieChart(element);
         resize(function () {
           chart.draw(data, {
-            backgroundColor: 'none',
+            backgroundColor: {
+              fill: 'none',
+              stroke: '#1AB5B5',
+              strokeWidth: 8
+            },
+            chartArea: {
+              backgroundColor: {
+                stroke: 'none',
+                strokeWidth: 0
+              }
+            },
             pieHole: 0.4,
             pieSliceBorder: '#1AB5B5',
             colors: ['#116161', '#179494'],
