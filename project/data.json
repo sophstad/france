@@ -6265,7 +6265,7 @@
             "questionPrompt" : "What are you doing?",
             "tokens" : [
               {
-                "text" : "Getting coffee",
+                "text" : "☕️",
                 "uniqueIdentifier" : "2E920E28-CAE4-4AA0-99AD-69EB3DED7F8C"
               }
             ],
@@ -8402,7 +8402,7 @@
             "questionPrompt" : "What are you doing?",
             "tokens" : [
               {
-                "text" : "Getting coffee",
+                "text" : "☕️",
                 "uniqueIdentifier" : "2E920E28-CAE4-4AA0-99AD-69EB3DED7F8C"
               }
             ],

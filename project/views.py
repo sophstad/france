@@ -8,10 +8,12 @@ def home():
     workingChart = [['Yes', yesWorking], ['No', notWorking]]
     metroAverage = metro()
     temperatureAverage = temperature()
+    activity_dict = activities()
     return render_template('index.html',
         workingChart=workingChart,
         metroAverage=metroAverage,
-        temperatureAverage=temperatureAverage)
+        temperatureAverage=temperatureAverage,
+        activity_dict=activity_dict)
 
 if __name__ == "__main__":
     app.debug = True

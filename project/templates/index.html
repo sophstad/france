@@ -5,17 +5,25 @@
 {% block body %}
 <div class="container">
   <div class="clearfix">
-    <div class="col-1-of-3">
+    <div class="col col-4 mb2">
       <h1 class="m0 lh1">6:47</h1><p class="m0 lh1">Time asleep each night</p>
     </div>
-    <div class="col-1-of-3">
+    <div class="col col-4 mb2">
       <h1 class="m0 lh1">{{ metroAverage }}</h1><p class="m0 lh1">Metro rides per day</p>
     </div>
-    <div class="col-1-of-3">
+    <div class="col col-4 mb2">
       <h1 class="m0 lh1">283</h1><p class="m0 lh1">Photos taken</p>
     </div>
-    <div class="col-1-of-3">
+    <div class="col col-4 mb2">
       <h1 class="m0 lh1">{{ temperatureAverage }}&#176;</h1><p class="m0 lh1">Average temperature</p>
+    </div>
+    <div class="col col-12">
+      <p>
+        {% for activity, quantity in activity_dict.iteritems() %}
+          <span class="medium">{{ activity }}</span> ({{ quantity }})
+          {% if not loop.last %}, {% endif %}
+        {% endfor %}
+      </p>
     </div>
   </div>
 </div>
