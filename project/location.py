@@ -10,7 +10,6 @@ with open('data.json') as data_file:
 #             print str(snapshot['location']['longitude']) + ", " + str(snapshot['location']['latitude'])
 #             counter += 1
 #         except KeyError: pass
-# print counter
 
 for report in data['reports']:
     for snapshot in report['snapshots']:
