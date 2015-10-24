@@ -1,6 +1,6 @@
 {% extends 'layout.html' %}
 
-{% block title %}France By Numbers{% endblock %}
+{% block title %}France By Numbers{% endblock title %}
 
 {% block body %}
 <div class="container">
@@ -15,15 +15,18 @@
       <h1 class="m0 lh1">283</h1><p class="m0 lh1">Photos taken</p>
     </div>
     <div class="col col-4 mb2">
-      <h1 class="m0 lh1">{{ temperatureAverage }}&#176;</h1><p class="m0 lh1">Average temperature</p>
+      <h1 class="m0 lh1">{{ temperatureAverage }}&#176;F</h1><p class="m0 lh1">Average temperature</p>
     </div>
     <div class="col col-12">
+      <p class="bold mb1">What are you doing?</p>
       <p>
-        {% for activity, quantity in activity_dict.iteritems() %}
-          <span class="medium">{{ activity }}</span> ({{ quantity }})
-          {% if not loop.last %}, {% endif %}
+        {% for activity, quantity in activity_dict|dictsort(false, 'value')|reverse %}
+          <span class="medium">{{ activity }}</span> ({{ quantity }}){% if not loop.last %},{% endif %}
         {% endfor %}
       </p>
+    </div>
+    <div class="col col-6">
+      <p class="bold mb1">Commentary on Activities</p>
     </div>
   </div>
 </div>
@@ -33,4 +36,4 @@
 <div class="container">
   <iframe width='100%' height='500px' frameBorder='0' src='https://a.tiles.mapbox.com/v4/sophstad.16ca1003/attribution,zoompan,zoomwheel,geocoder,share.html?access_token=pk.eyJ1Ijoic29waHN0YWQiLCJhIjoiOTc1YTY0MjZkMThiY2VlNGUxMzU1OGIwM2FiYzRhNTgifQ.W5NL4LnIO0_ZRcSIKOkXDA'></iframe>
 </div>
-{% endblock %}
+{% endblock body %}

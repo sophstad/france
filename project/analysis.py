@@ -1,9 +1,10 @@
 import json
 
-with open('project/data.json') as data_file:
+with open('data.json') as data_file:
     data = json.load(data_file)
 
 def metro():
+    '''Calculate average metro rides per day'''
     metros = 0
     metroCounter = 0
     for report in data['reports']:
@@ -16,6 +17,7 @@ def metro():
     return metroAverage
 
 def working():
+    '''Find percentage of days working'''
     notWorking = 0
     yesWorking = 0
     for report in data['reports']:
@@ -29,6 +31,7 @@ def working():
     return yesWorking, notWorking
 
 def temperature():
+    '''Calculate average temperature'''
     temperature = 0
     temperatureCounter = 0
     for report in data['reports']:
@@ -40,7 +43,8 @@ def temperature():
     temperatureAverage = temperature / temperatureCounter
     return temperatureAverage
 
-def activities():   
+def activities():
+    '''Display common activities''' 
     activity_list = []
     activity_dict = {}
     for report in data['reports']:
@@ -51,9 +55,14 @@ def activities():
                         activity_list.append(response['tokens'][0]['text'])
                     except KeyError: pass
 
+    # Remove unwanted list items
+    i = 0
     for item in activity_list:
-        if item == '\U0001F341':
+        if item == u'\U0001F341':
             activity_list.remove(item)
+        if item == 'On the subway' or item == 'On the bus':
+            activity_list[i] = 'Commuting'
+        i += 1
 
     for item in activity_list:
         if item in activity_dict:
