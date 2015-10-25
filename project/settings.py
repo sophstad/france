@@ -22,3 +22,7 @@ FREEZER_DESTINATION = PROJECT_ROOT
 FREEZER_BASE_URL = "http://localhost/{0}".format(REPO_NAME)
 FREEZER_REMOVE_EXTRA_FILES = False  # IMPORTANT: If this is True, all app files
                                     # will be deleted when you run the freezer
+
+                                    #utc 1433635200 to 1437814800
+
+# http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=sw1m97&api_key=dfc0d3f11ee15ab2f914558029a4896c&format=json&from=1433635200&to=1437814800&limit=200
