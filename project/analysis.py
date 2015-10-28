@@ -4,20 +4,20 @@ with open('data.json') as data_file:
     data = json.load(data_file)
 
 def metro():
-    '''Calculate average metro rides per day'''
-    metros = 0
-    metro_counter = 0
+    ''' Calculate average metro rides per day '''
+    metro_rides = 0
+    day_counter = 0
     for report in data['reports']:
         for snapshot in report['snapshots']:
             for response in snapshot['responses']:
                 if response['questionPrompt'] == 'How many times did you ride the metro today?':
-                    metros += int(response['numericResponse'])
-                    metro_counter += 1
-    metro_average = metros / metro_counter
+                    metro_rides += int(response['numericResponse'])
+                    day_counter += 1
+    metro_average = metro_rides / float(day_counter)
     return metro_average
 
 def working():
-    '''Find percentage of days working'''
+    ''' Find percentage of time working to display in pie chart '''
     not_working = 0
     yes_working = 0
     for report in data['reports']:
@@ -31,31 +31,48 @@ def working():
     return yes_working, not_working
 
 def temperature():
-    '''Calculate average temperature'''
+    ''' Calculate average temperature '''
     temperature = 0
-    temperature_counter = 0
+    day_counter = 0
     for report in data['reports']:
         for snapshot in report['snapshots']:
             try:
                 temperature += snapshot['weather']['feelslikeF']
-                temperature_counter += 1
+                day_counter += 1
             except KeyError: pass
-    temperature_average = temperature / temperature_counter
+    temperature_average = temperature / float(day_counter)
     return temperature_average
 
 def weather():
-    '''Total number of clear days'''
+    ''' Total number of clear days '''
     clear = 0
+    day_counter = 0
     for report in data['reports']:
         for snapshot in report['snapshots']:
             try:
                 if snapshot['weather']['weather'] == 'Clear':
                     clear += 1
+                if snapshot['weather']['weather'] is not None:
+                    day_counter += 1
             except KeyError: pass
-    return clear
+    sunny_days = 100 * clear / float(day_counter)
+    return sunny_days
+
+def coffee():
+    ''' Calculates average coffees per day '''
+    coffees = 0
+    day_counter = 0
+    for report in data['reports']:
+        for snapshot in report['snapshots']:
+            for response in snapshot['responses']:
+                if response['questionPrompt'] == 'How many coffees did you have today?':
+                    coffees += int(response['numericResponse'])
+                    day_counter += 1
+    coffee_average = coffees / float(day_counter)
+    return coffee_average
 
 def activities():
-    '''Display common activities''' 
+    ''' Calculates and displays most common activities ''' 
     activity_list = []
     activity_dict = {}
     for report in data['reports']:
@@ -66,7 +83,7 @@ def activities():
                         activity_list.append(response['tokens'][0]['text'])
                     except KeyError: pass
 
-    # Remove unwanted list items
+    # Remove unwanted list items, combine similar responses
     i = 0
     for item in activity_list:
         if item == u'\U0001F341':
@@ -83,15 +100,15 @@ def activities():
     return activity_dict
 
 def music():
-    '''Display common music''' 
+    ''' Get most common artists from Last.fm ''' 
     music_list = []
     music_dict = {}
     i = 1
     while i <= 5:
-        url = 'http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=sw1m97&api_key=dfc0d3f11ee15ab2f914558029a4896c&format=json&from=1433635200&to=1437814800&limit=200&page={}'.format(i)
-        api = requests.get(url).json()
-        for recenttrack in api['recenttracks']['track']:
-            music_list.append(recenttrack['artist']['#text'])
+        lastfm_url = 'http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=sw1m97&api_key=dfc0d3f11ee15ab2f914558029a4896c&format=json&from=1433635200&to=1437814800&limit=200&page={}'.format(i)
+        api = requests.get(lastfm_url).json()
+        for recent_track in api['recenttracks']['track']:
+            music_list.append(recent_track['artist']['#text'])
         i += 1
 
     for item in music_list:
@@ -100,9 +117,29 @@ def music():
         else:
             music_dict[item] = 1
 
-    j = 0
+    j = 0 # delete least-listened artists from dictionary
     while j < 110:
         del music_dict[min(music_dict, key=music_dict.get)]
         j += 1
 
     return music_dict
+
+def locations():
+    ''' Get location types from Foursquare '''
+    location_keys = []
+    location_types = []
+    for report in data['reports']:
+        for snapshot in report['snapshots']:
+            for response in snapshot['responses']:
+                try:
+                    if response['questionPrompt'] == 'Where are you?':
+                        location_keys.append(response['locationResponse']['foursquareVenueId'])
+                except KeyError: pass
+
+    for place in location_keys:
+        location_url = 'https://api.foursquare.com/v2/venues/{}?client_id=FH5CJJBXKZNKBHFXW0ZX35LPNGZJFHZAT1FE3HTNNT5RAWI4&client_secret=XAGPXZL23RJMDSNLSVJW01QFF0LDHAN1IRVGIW3MCQQDPW1P&v=20130815'.format(place)
+        api2 = requests.get(location_url).json()
+        for location in api2['response']['venue']['categories']:
+            location_types.append(str(location['name']))
+
+    return location_types

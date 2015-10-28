@@ -9,6 +9,7 @@ def home():
     metro_average = metro()
     temperature_average = temperature()
     sunny_days = weather()
+    coffees = coffee()
     activity_dict = activities()
     music_dict = {'Alvvays': 38, 'Todd Terje': 19, 'Real Estate': 21, 'Kelela': 18, 'The War on Drugs': 12, 'Rae Sremmurd': 16, "D'Angelo": 12, 'Vince Staples': 25, 'Mac DeMarco': 14, 'Majical Cloudz': 18, 'Kanye West': 12, 'Shabazz Palaces': 36, 'Tame Impala': 51, 'Nosaj Thing': 15, 'Django Django': 15, 'Super Social Jeez': 12, 'Sufjan Stevens': 43, 'Unknown Mortal Orchestra': 12, 'A$AP Rocky': 37, 'Young Fathers': 10, 'Drake': 61, 'Father': 64}
     return render_template('index.html',
@@ -16,6 +17,7 @@ def home():
         metro_average=metro_average,
         temperature_average=temperature_average,
         sunny_days=sunny_days,
+        coffees=coffees,
         activity_dict=activity_dict,
         music_dict=music_dict)
 

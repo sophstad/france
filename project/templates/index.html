@@ -6,19 +6,22 @@
 <div class="container">
   <div class="clearfix">
     <div class="col col-4 mb2">
-      <h1 class="m0 lh1">6:47</h1><p class="m0 lh1">Time asleep each night</p>
+      <h1 class="m0 lh1">6:47</h1><p class="m0 lh1">Hours asleep each night</p>
     </div>
     <div class="col col-4 mb2">
-      <h1 class="m0 lh1">{{ metro_average }}</h1><p class="m0 lh1">Metro rides per day</p>
+      <h1 class="m0 lh1">{{ metro_average|round(2) }}</h1><p class="m0 lh1">Metro rides per day</p>
     </div>
     <div class="col col-4 mb2">
       <h1 class="m0 lh1">283</h1><p class="m0 lh1">Photos taken</p>
     </div>
     <div class="col col-4 mb2">
-      <h1 class="m0 lh1">{{ temperature_average }}&#176;F</h1><p class="m0 lh1">Average temperature</p>
+      <h1 class="m0 lh1">{{ temperature_average|round|int }}&#176;F</h1><p class="m0 lh1">Average temperature</p>
     </div>
     <div class="col col-4 mb2">
-      <h1 class="m0 lh1">{{ sunny_days }}</h1><p class="m0 lh1">Sunny days</p>
+      <h1 class="m0 lh1">{{ sunny_days|round|int }}%</h1><p class="m0 lh1">Sunny days</p>
+    </div>
+    <div class="col col-4 mb2">
+      <h1 class="m0 lh1">{{ coffees|round(1) }}</h1><p class="m0 lh1">Coffees per day</p>
     </div>
     <div class="col col-12">
       <p class="bold mb1">What are you doing?</p>
