@@ -1,7 +1,7 @@
 body {
   background-color: rgb(26, 181, 181);
   color: rgb(14, 78, 78);
-  font-family: 'Input Sans Narrow', 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif;
   line-height: 1.5;
   margin: 0;
 }
@@ -11,7 +11,7 @@ h1 {
   font-weight: 900;
 }
 p {
-  font-weight: 300;
+  font-weight: 400;
   margin-top: 0;
   margin-bottom: 1rem;
 }
@@ -25,17 +25,36 @@ p {
 .bold {
   font-weight: 700;
 }
-.medium {
-  font-weight: 400;
+.light {
+  font-weight: 300;
 }
 .lh1 {
   line-height: 1;
 }
-.m0 {
-  margin: 0;
-}
+.m0 { margin: 0; }
+
 .mb1 { margin-bottom: 1rem; }
+
+.mt2 { margin-top: 2rem; }
 .mb2 { margin-bottom: 2rem; }
+
+.border-right {
+  border-right-style: solid;
+  border-right-width: 0.25rem;
+  border-right-color: rgb(17, 97, 97);
+}
+.border-left {
+  border-left-style: solid;
+  border-left-width: 0.25rem;
+  border-left-color: rgb(17, 97, 97);
+}
+
+.pr2 { padding-right: 2rem; }
+.pl2 { padding-left: 2rem; }
+
+.align-right {
+  text-align: right;
+}
 
 /* Columns */
 .clearfix:before,
@@ -48,6 +67,7 @@ p {
   float: left;
   box-sizing: border-box;
 }
+.col-3 { width: 25%; }
 .col-4 { width: 33.333333%; }
 .col-6 { width: 50%; }
 .col-12 { width: 100%; }

@@ -71,6 +71,14 @@ def coffee():
     coffee_average = coffees / float(day_counter)
     return coffee_average
 
+def reports():
+    ''' Calculates the total number of reports '''
+    report_counter = 0
+    for report in data['reports']:
+        for snapshot in report['snapshots']:
+            report_counter += 1
+    return report_counter
+
 def activities():
     ''' Calculates and displays most common activities ''' 
     activity_list = []

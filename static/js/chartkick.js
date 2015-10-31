@@ -389,7 +389,7 @@
     // Set chart options
     defaultOptions = {
       chartArea: {},
-      fontName: "'Input Sans Narrow', Arial, Helvetica, sans-serif",
+      fontName: "'Roboto', Arial, Helvetica, sans-serif",
       pointSize: 6,
       legend: {
         textStyle: {
@@ -535,7 +535,7 @@
             pieHole: 0.4,
             pieSliceBorder: '#1AB5B5',
             colors: ['#116161', '#179494'],
-            fontName: 'Input Sans Narrow',
+            fontName: 'Roboto',
           });
         });
       });

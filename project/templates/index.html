@@ -3,31 +3,48 @@
 {% block title %}France By Numbers{% endblock title %}
 
 {% block body %}
+<div class="container mb2 mt2">
+  <div class="clearfix">
+    <div class="col col-6 pr2 border-right">
+      <h1 class="lh1 align-right">France by Numbers</h1>
+    </div>
+    <div class="col col-6 pl2 border-left">
+      <h1 class="lh1">La France par les Chiffres</h1>
+    </div>    
+  </div>
+</div>
+
 <div class="container">
   <div class="clearfix">
-    <div class="col col-4 mb2">
+    <div class="col col-3 mb2">
       <h1 class="m0 lh1">6:47</h1><p class="m0 lh1">Hours asleep each night</p>
     </div>
-    <div class="col col-4 mb2">
+    <div class="col col-3 mb2">
       <h1 class="m0 lh1">{{ metro_average|round(2) }}</h1><p class="m0 lh1">Metro rides per day</p>
     </div>
-    <div class="col col-4 mb2">
+    <div class="col col-3 mb2">
       <h1 class="m0 lh1">283</h1><p class="m0 lh1">Photos taken</p>
     </div>
-    <div class="col col-4 mb2">
+    <div class="col col-3 mb2">
       <h1 class="m0 lh1">{{ temperature_average|round|int }}&#176;F</h1><p class="m0 lh1">Average temperature</p>
     </div>
-    <div class="col col-4 mb2">
+    <div class="col col-3 mb2">
       <h1 class="m0 lh1">{{ sunny_days|round|int }}%</h1><p class="m0 lh1">Sunny days</p>
     </div>
-    <div class="col col-4 mb2">
+    <div class="col col-3 mb2">
+      <h1 class="m0 lh1">7</h1><p class="m0 lh1">Facebook group chats</p>
+    </div>
+    <div class="col col-3 mb2">
       <h1 class="m0 lh1">{{ coffees|round(1) }}</h1><p class="m0 lh1">Coffees per day</p>
+    </div>
+    <div class="col col-3 mb2">
+      <h1 class="m0 lh1">{{ report }}</h1><p class="m0 lh1">Total reports</p>
     </div>
     <div class="col col-12">
       <p class="bold mb1">What are you doing?</p>
       <p>
         {% for activity, quantity in activity_dict|dictsort(false, 'value')|reverse %}
-          <span class="medium">{{ activity }}</span> ({{ quantity }}){% if not loop.last %},{% endif %}
+          {{ activity }} <span class="light">({{ quantity }})</span>{% if not loop.last %},{% endif %}
         {% endfor %}
       </p>
     </div>
@@ -44,11 +61,18 @@
     </div> -->
   </div>
 </div>
+
 <div class="container">
-  {% pie_chart working_chart %}
-</div>
-<div class="container">
-  {% pie_chart music_dict %}
+  <div class="clearfix">
+    <div class="col col-6">
+      <p class="bold mb1">Are you working?</p>
+      {% pie_chart working_chart %}
+    </div>
+    <div class="col col-6">
+      <p class="bold mb1">What are you listening to?</p>
+      {% pie_chart music_dict %}
+    </div>
+  </div>
 </div>
 <div class="container">
   <iframe width='100%' height='500px' frameBorder='0' src='https://a.tiles.mapbox.com/v4/sophstad.16ca1003/attribution,zoompan,zoomwheel,geocoder,share.html?access_token=pk.eyJ1Ijoic29waHN0YWQiLCJhIjoiOTc1YTY0MjZkMThiY2VlNGUxMzU1OGIwM2FiYzRhNTgifQ.W5NL4LnIO0_ZRcSIKOkXDA'></iframe>

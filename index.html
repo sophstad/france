@@ -16,77 +16,94 @@
   <body>
 
     
+<div class="container mb2 mt2">
+  <div class="clearfix">
+    <div class="col col-6 pr2 border-right">
+      <h1 class="lh1 align-right">France by Numbers</h1>
+    </div>
+    <div class="col col-6 pl2 border-left">
+      <h1 class="lh1">La France par les Chiffres</h1>
+    </div>    
+  </div>
+</div>
+
 <div class="container">
   <div class="clearfix">
-    <div class="col col-4 mb2">
+    <div class="col col-3 mb2">
       <h1 class="m0 lh1">6:47</h1><p class="m0 lh1">Hours asleep each night</p>
     </div>
-    <div class="col col-4 mb2">
+    <div class="col col-3 mb2">
       <h1 class="m0 lh1">3.15</h1><p class="m0 lh1">Metro rides per day</p>
     </div>
-    <div class="col col-4 mb2">
+    <div class="col col-3 mb2">
       <h1 class="m0 lh1">283</h1><p class="m0 lh1">Photos taken</p>
     </div>
-    <div class="col col-4 mb2">
+    <div class="col col-3 mb2">
       <h1 class="m0 lh1">70&#176;F</h1><p class="m0 lh1">Average temperature</p>
     </div>
-    <div class="col col-4 mb2">
+    <div class="col col-3 mb2">
       <h1 class="m0 lh1">60%</h1><p class="m0 lh1">Sunny days</p>
     </div>
-    <div class="col col-4 mb2">
+    <div class="col col-3 mb2">
+      <h1 class="m0 lh1">7</h1><p class="m0 lh1">Facebook group chats</p>
+    </div>
+    <div class="col col-3 mb2">
       <h1 class="m0 lh1">1.5</h1><p class="m0 lh1">Coffees per day</p>
+    </div>
+    <div class="col col-3 mb2">
+      <h1 class="m0 lh1">188</h1><p class="m0 lh1">Total reports</p>
     </div>
     <div class="col col-12">
       <p class="bold mb1">What are you doing?</p>
       <p>
         
-          <span class="medium">On the computer</span> (26),
+          On the computer <span class="light">(26)</span>,
         
-          <span class="medium">Schoolwork</span> (17),
+          Schoolwork <span class="light">(17)</span>,
         
-          <span class="medium">Lying in bed</span> (9),
+          Lying in bed <span class="light">(9)</span>,
         
-          <span class="medium">Sightseeing</span> (7),
+          Sightseeing <span class="light">(7)</span>,
         
-          <span class="medium">Commuting</span> (6),
+          Commuting <span class="light">(6)</span>,
         
-          <span class="medium">Watching TV</span> (5),
+          Watching TV <span class="light">(5)</span>,
         
-          <span class="medium">Having dinner</span> (5),
+          Having dinner <span class="light">(5)</span>,
         
-          <span class="medium">Getting dressed</span> (5),
+          Getting dressed <span class="light">(5)</span>,
         
-          <span class="medium">With friends</span> (4),
+          With friends <span class="light">(4)</span>,
         
-          <span class="medium">☕️</span> (4),
+          ☕️ <span class="light">(4)</span>,
         
-          <span class="medium">Having lunch</span> (3),
+          Having lunch <span class="light">(3)</span>,
         
-          <span class="medium">Reading</span> (3),
+          Reading <span class="light">(3)</span>,
         
-          <span class="medium">Taking pictures</span> (2),
+          Taking pictures <span class="light">(2)</span>,
         
-          <span class="medium">At a concert</span> (2),
+          At a concert <span class="light">(2)</span>,
         
-          <span class="medium">Having breakfast</span> (2),
+          Having breakfast <span class="light">(2)</span>,
         
-          <span class="medium">Shopping</span> (2),
+          Shopping <span class="light">(2)</span>,
         
-          <span class="medium">Watching a movie</span> (2),
+          Watching a movie <span class="light">(2)</span>,
         
-          <span class="medium">Getting ready for bed</span> (1),
+          Getting ready for bed <span class="light">(1)</span>,
         
-          <span class="medium">Getting Bubble Tea</span> (1),
+          Getting Bubble Tea <span class="light">(1)</span>,
         
-          <span class="medium">Coding</span> (1),
+          Coding <span class="light">(1)</span>,
         
-          <span class="medium">Napping</span> (1),
+          Napping <span class="light">(1)</span>,
         
-          <span class="medium">Seeing a play</span> (1),
+          Seeing a play <span class="light">(1)</span>,
         
-          <span class="medium">Packing</span> (1),
+          Packing <span class="light">(1)</span>,
         
-          <span class="medium">Listening to music</span> (1)
+          Listening to music <span class="light">(1)</span>
         
       </p>
     </div>
@@ -145,8 +162,12 @@
     </div> -->
   </div>
 </div>
+
 <div class="container">
-  
+  <div class="clearfix">
+    <div class="col col-6">
+      <p class="bold mb1">Are you working?</p>
+      
 <div id="chart-0" style="height: 300px; text-align: center; color: #999;
                       line-height: 300px; font-size: 14px;
                       font-family: Lucida Grande, Lucida Sans Unicode,
@@ -159,9 +180,10 @@ new Chartkick.PieChart(document.getElementById("chart-0"), [['Yes', 17], ['No', 
 //]]>
 </script>
 
-</div>
-<div class="container">
-  
+    </div>
+    <div class="col col-6">
+      <p class="bold mb1">What are you listening to?</p>
+      
 <div id="chart-1" style="height: 300px; text-align: center; color: #999;
                       line-height: 300px; font-size: 14px;
                       font-family: Lucida Grande, Lucida Sans Unicode,
@@ -174,6 +196,8 @@ new Chartkick.PieChart(document.getElementById("chart-1"), {'Father': 64, 'Drake
 //]]>
 </script>
 
+    </div>
+  </div>
 </div>
 <div class="container">
   <iframe width='100%' height='500px' frameBorder='0' src='https://a.tiles.mapbox.com/v4/sophstad.16ca1003/attribution,zoompan,zoomwheel,geocoder,share.html?access_token=pk.eyJ1Ijoic29waHN0YWQiLCJhIjoiOTc1YTY0MjZkMThiY2VlNGUxMzU1OGIwM2FiYzRhNTgifQ.W5NL4LnIO0_ZRcSIKOkXDA'></iframe>
