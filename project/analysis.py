@@ -125,12 +125,21 @@ def music():
         else:
             music_dict[item] = 1
 
-    j = 0 # delete least-listened artists from dictionary
-    while j < 110:
+    # delete least-listened artists from dictionary
+    # this requires a lot of iterations tho
+    # should probably change
+    while len(music_dict) > 10:
         del music_dict[min(music_dict, key=music_dict.get)]
-        j += 1
 
-    return music_dict
+    list_of_ten = []
+    for artist, plays in music_dict.items():
+        interior_list = []
+        interior_list.append(artist)
+        interior_list.append(plays)
+        list_of_ten.append(interior_list)
+    list_of_ten.sort(key=lambda x: x[1], reverse=True)
+
+    return list_of_ten
 
 def locations():
     ''' Get location types from Foursquare '''

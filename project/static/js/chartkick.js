@@ -389,12 +389,18 @@
     // Set chart options
     defaultOptions = {
       chartArea: {},
-      fontName: "'Roboto', Arial, Helvetica, sans-serif",
+      fontName: "'Roboto Mono', Arial, Helvetica, sans-serif",
       pointSize: 6,
+      backgroundColor: {
+              fill: 'none',
+              stroke: 'none',
+              strokeWidth: 8
+            },
+      colors: ['#F95E4D', '#fb8171'],
       legend: {
         textStyle: {
           fontSize: 12,
-          color: "#444"
+          color: "#fff"
         },
         alignment: "center",
         position: "right"
@@ -402,7 +408,7 @@
       curveType: "function",
       hAxis: {
         textStyle: {
-          color: "#666",
+          color: "#777",
           fontSize: 12
         },
         gridlines: {
@@ -413,7 +419,7 @@
       },
       vAxis: {
         textStyle: {
-          color: "#666",
+          color: "#777",
           fontSize: 12
         },
         baselineColor: "#ccc",
@@ -421,7 +427,7 @@
       },
       tooltip: {
         textStyle: {
-          color: "#666",
+          color: "#777",
           fontSize: 12
         }
       }
@@ -534,8 +540,13 @@
             },
             pieHole: 0.4,
             pieSliceBorder: '#1AB5B5',
-            colors: ['#116161', '#179494'],
-            fontName: 'Roboto',
+            colors: ['#F95E4D', '#fb8171'],
+            fontName: 'Roboto Mono',
+            legend: {
+              textStyle: {
+                color: '#777',
+              }
+            }
           });
         });
       });

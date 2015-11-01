@@ -13,7 +13,8 @@ def home():
     report = reports()
     activity_dict = activities()
     places = locations()
-    music_dict = {'Alvvays': 38, 'Todd Terje': 19, 'Real Estate': 21, 'Kelela': 18, 'The War on Drugs': 12, 'Rae Sremmurd': 16, "D'Angelo": 12, 'Vince Staples': 25, 'Mac DeMarco': 14, 'Majical Cloudz': 18, 'Kanye West': 12, 'Shabazz Palaces': 36, 'Tame Impala': 51, 'Nosaj Thing': 15, 'Django Django': 15, 'Super Social Jeez': 12, 'Sufjan Stevens': 43, 'Unknown Mortal Orchestra': 12, 'A$AP Rocky': 37, 'Young Fathers': 10, 'Drake': 61, 'Father': 64}
+    list_of_ten = music()
+    honorable_mentions = {'Bubble T. Paris': 'http://www.bubbletparis.com', 'Coutume Instituutti': 'https://www.facebook.com/coutumeinstituutti', 'Fondation Louis Vuitton': 'http://www.fondationlouisvuitton.fr/content/flvinternet/en.html'}
     return render_template('index.html',
         working_chart=working_chart,
         metro_average=metro_average,
@@ -22,8 +23,9 @@ def home():
         coffees=coffees,
         report=report,
         activity_dict=activity_dict,
-        music_dict=music_dict,
-        places=places,)
+        list_of_ten=list_of_ten,
+        places=places,
+        honorable_mentions=honorable_mentions,)
 
 if __name__ == "__main__":
     app.debug = True

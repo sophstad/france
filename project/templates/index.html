@@ -3,66 +3,68 @@
 {% block title %}France By Numbers{% endblock title %}
 
 {% block body %}
-<div class="container mb2 mt2">
-  <div class="clearfix">
+<div class="container">
+  <div class="clearfix mt2 mb2">
     <div class="col col-6 pr2 border-right">
-      <h1 class="lh1 align-right">France by Numbers</h1>
+      <h1 class="lh1 align-right">France<br>by<br>Numbers</h1>
     </div>
     <div class="col col-6 pl2 border-left">
       <h1 class="lh1">La France par les Chiffres</h1>
     </div>    
   </div>
-</div>
 
-<div class="container">
   <div class="clearfix">
     <div class="col col-3 mb2">
-      <h1 class="m0 lh1">6:47</h1><p class="m0 lh1">Hours asleep each night</p>
+      <h1 class="m0 lh1">6:47</h1><p class="m0 lh1 red">Hours asleep per night</p>
     </div>
     <div class="col col-3 mb2">
-      <h1 class="m0 lh1">{{ metro_average|round(2) }}</h1><p class="m0 lh1">Metro rides per day</p>
+      <h1 class="m0 lh1">{{ metro_average|round(2) }}</h1><p class="m0 lh1 red">Metro rides per day</p>
     </div>
     <div class="col col-3 mb2">
-      <h1 class="m0 lh1">283</h1><p class="m0 lh1">Photos taken</p>
+      <h1 class="m0 lh1">283</h1><p class="m0 lh1 red">Photos taken</p>
     </div>
     <div class="col col-3 mb2">
-      <h1 class="m0 lh1">{{ temperature_average|round|int }}&#176;F</h1><p class="m0 lh1">Average temperature</p>
+      <h1 class="m0 lh1">{{ temperature_average|round|int }}&#176;F</h1><p class="m0 lh1 red">Average temperature</p>
     </div>
     <div class="col col-3 mb2">
-      <h1 class="m0 lh1">{{ sunny_days|round|int }}%</h1><p class="m0 lh1">Sunny days</p>
+      <h1 class="m0 lh1">{{ sunny_days|round|int }}%</h1><p class="m0 lh1 red">Sunny days</p>
     </div>
     <div class="col col-3 mb2">
-      <h1 class="m0 lh1">7</h1><p class="m0 lh1">Facebook group chats</p>
+      <h1 class="m0 lh1">7</h1><p class="m0 lh1 red">Facebook group chats</p>
     </div>
     <div class="col col-3 mb2">
-      <h1 class="m0 lh1">{{ coffees|round(1) }}</h1><p class="m0 lh1">Coffees per day</p>
+      <h1 class="m0 lh1">{{ coffees|round(1) }}</h1><p class="m0 lh1 red">Coffees per day</p>
     </div>
     <div class="col col-3 mb2">
-      <h1 class="m0 lh1">{{ report }}</h1><p class="m0 lh1">Total reports</p>
+      <h1 class="m0 lh1">{{ report }}</h1><p class="m0 lh1 red">Total reports</p>
     </div>
-    <div class="col col-12">
-      <p class="bold mb1">What are you doing?</p>
-      <p>
-        {% for activity, quantity in activity_dict|dictsort(false, 'value')|reverse %}
-          {{ activity }} <span class="light">({{ quantity }})</span>{% if not loop.last %},{% endif %}
-        {% endfor %}
-      </p>
+  </div>
+</div>
+
+<div class="mt2 mb2">
+  <img src="{{ url_for('static', filename='img/panorama.jpg') }}">
+    
+  <div class="container">
+    <div class="clearfix">
+      <div class="col col-12">
+        <p>View from my room in Saint-Mand&eacute; • 7 June 2015</p>
+      </div>
     </div>
-    <div class="col col-6">
-      <p class="bold mb1">Commentary on Activities</p>
-    </div>
-    <!-- <div class="col col-12">
-      <p class="bold mb1">What are you listening to?</p>
-      <p>
-        {% for artist, quantity in music_dict|dictsort(false, 'value')|reverse %}
-          <span class="medium">{{ artist }}</span> ({{ quantity }}){% if not loop.last %},{% endif %}
-        {% endfor %}
-      </p>
-    </div> -->
   </div>
 </div>
 
 <div class="container">
+  <div class="clearix">
+    <div class="col col-12">
+      <p class="bold mb1">What are you doing?</p>
+      <p>
+        {% for activity, quantity in activity_dict|dictsort(false, 'value')|reverse %}
+          {{ activity }} (<span class="red">{{ quantity }}</span>){% if not loop.last %},{% endif %}
+        {% endfor %}
+      </p>
+    </div>
+  </div>
+
   <div class="clearfix">
     <div class="col col-6">
       <p class="bold mb1">Are you working?</p>
@@ -70,18 +72,27 @@
     </div>
     <div class="col col-6">
       <p class="bold mb1">What are you listening to?</p>
-      {% pie_chart music_dict %}
+      {% bar_chart list_of_ten %}
     </div>
   </div>
-</div>
-<div class="container">
+
   <iframe width='100%' height='500px' frameBorder='0' src='https://a.tiles.mapbox.com/v4/sophstad.16ca1003/attribution,zoompan,zoomwheel,geocoder,share.html?access_token=pk.eyJ1Ijoic29waHN0YWQiLCJhIjoiOTc1YTY0MjZkMThiY2VlNGUxMzU1OGIwM2FiYzRhNTgifQ.W5NL4LnIO0_ZRcSIKOkXDA'></iframe>
+
   <div class="clearfix">
     <div class="col col-12 mt2">
-      <p class="bold mb1">The types of places I visited, according to Foursquare:</p>
+      <p class="bold mb1">The types of places I visited, according to Foursquare</p>
       <p>
         {% for place, quantity in places|dictsort(false, 'value')|reverse %}
-          {{ place }} <span class="light">({{ quantity }})</span>{% if not loop.last %},{% endif %}
+          {{ place }} (<span class="red">{{ quantity }}</span>){% if not loop.last %},{% endif %}
+        {% endfor %}
+      </p>
+    </div>
+
+    <div class="col col-12 mt2">
+      <p class="bold mb1">Honorable Mentions</p>
+      <p>
+        {% for place, url in honorable_mentions.items() %}
+          <a class="border-bottom" href="{{ url }}">{{ place }}</a>{% if not loop.last %},{% endif %}
         {% endfor %}
       </p>
     </div>

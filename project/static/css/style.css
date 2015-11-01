@@ -1,19 +1,29 @@
 body {
-  background-color: rgb(26, 181, 181);
-  color: rgb(14, 78, 78);
-  font-family: 'Roboto', sans-serif;
+  background-color: #222;
+  color: #fff;
+  font-family: 'Roboto Mono', monospace;
   line-height: 1.5;
   margin: 0;
 }
+img { max-width: 100%; }
 h1 {
-  color: rgb(17, 97, 97);
+  /*color: rgb(17, 97, 97);*/
   font-size: 4rem;
-  font-weight: 900;
+  font-weight: 700;
 }
 p {
-  font-weight: 400;
+  font-weight: 300;
   margin-top: 0;
   margin-bottom: 1rem;
+}
+a {
+  color: #fff;
+  /*border-bottom: 1px solid #fb8171;*/
+  text-decoration: none;
+}
+
+a:hover {
+  color: #fb8171;
 }
 .container {
   margin-left: auto;
@@ -23,10 +33,7 @@ p {
 
 /* Immutable CSS Classes */
 .bold {
-  font-weight: 700;
-}
-.light {
-  font-weight: 300;
+  font-weight: 500;
 }
 .lh1 {
   line-height: 1;
@@ -40,13 +47,18 @@ p {
 
 .border-right {
   border-right-style: solid;
-  border-right-width: 0.25rem;
-  border-right-color: rgb(17, 97, 97);
+  border-right-width: 0.125rem;
+  border-right-color: #fb8171;
+}
+.border-bottom {
+  border-bottom-style: solid;
+  border-bottom-width: .125rem;
+  border-bottom-color: #fb8171;
 }
 .border-left {
   border-left-style: solid;
-  border-left-width: 0.25rem;
-  border-left-color: rgb(17, 97, 97);
+  border-left-width: 0.125rem;
+  border-left-color: #fb8171;
 }
 
 .pr2 { padding-right: 2rem; }
@@ -54,6 +66,10 @@ p {
 
 .align-right {
   text-align: right;
+}
+
+.red {
+  color: #fb8171;
 }
 
 /* Columns */
