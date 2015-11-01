@@ -523,7 +523,7 @@
           chart.draw(data, {
             backgroundColor: {
               fill: 'none',
-              stroke: '#1AB5B5',
+              stroke: 'none',
               strokeWidth: 8
             },
             chartArea: {

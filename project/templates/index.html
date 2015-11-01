@@ -76,5 +76,15 @@
 </div>
 <div class="container">
   <iframe width='100%' height='500px' frameBorder='0' src='https://a.tiles.mapbox.com/v4/sophstad.16ca1003/attribution,zoompan,zoomwheel,geocoder,share.html?access_token=pk.eyJ1Ijoic29waHN0YWQiLCJhIjoiOTc1YTY0MjZkMThiY2VlNGUxMzU1OGIwM2FiYzRhNTgifQ.W5NL4LnIO0_ZRcSIKOkXDA'></iframe>
+  <div class="clearfix">
+    <div class="col col-12 mt2">
+      <p class="bold mb1">The types of places I visited, according to Foursquare:</p>
+      <p>
+        {% for place, quantity in places|dictsort(false, 'value')|reverse %}
+          {{ place }} <span class="light">({{ quantity }})</span>{% if not loop.last %},{% endif %}
+        {% endfor %}
+      </p>
+    </div>
+  </div>
 </div>
 {% endblock body %}

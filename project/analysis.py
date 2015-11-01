@@ -136,6 +136,7 @@ def locations():
     ''' Get location types from Foursquare '''
     location_keys = []
     location_types = []
+    location_dict = {}
     for report in data['reports']:
         for snapshot in report['snapshots']:
             for response in snapshot['responses']:
@@ -150,4 +151,10 @@ def locations():
         for location in api2['response']['venue']['categories']:
             location_types.append(str(location['name']))
 
-    return location_types
+    for item in location_types:
+        if item in location_dict:
+            location_dict[item] += 1
+        else:
+            location_dict[item] = 1
+
+    return location_dict
