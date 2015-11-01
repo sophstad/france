@@ -7,7 +7,6 @@ body {
 }
 img { max-width: 100%; }
 h1 {
-  /*color: rgb(17, 97, 97);*/
   font-size: 4rem;
   font-weight: 700;
 }
@@ -38,11 +37,12 @@ a:hover {
 .lh1 {
   line-height: 1;
 }
+
 .m0 { margin: 0; }
 
-.mb1 { margin-bottom: 1rem; }
-
 .mt2 { margin-top: 2rem; }
+
+.mb1 { margin-bottom: 1rem; }
 .mb2 { margin-bottom: 2rem; }
 
 .border-right {
