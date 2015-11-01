@@ -54,7 +54,7 @@
 </div>
 
 <div class="container">
-  <div class="clearix">
+  <div class="clearix mt2 mb2">
     <div class="col col-12">
       <p class="bold mb1">What are you doing?</p>
       <p>
@@ -80,7 +80,7 @@
 
   <div class="clearfix">
     <div class="col col-12 mt2">
-      <p class="bold mb1">The types of places I visited, according to Foursquare</p>
+      <p class="bold mb1">Types of places I visited, according to Foursquare</p>
       <p>
         {% for place, quantity in places|dictsort(false, 'value')|reverse %}
           {{ place }} (<span class="red">{{ quantity }}</span>){% if not loop.last %},{% endif %}
