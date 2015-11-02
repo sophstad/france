@@ -27,7 +27,7 @@ def home():
         places=places,
         honorable_mentions=honorable_mentions,)
 
-@app.route('/about.html')
+@app.route('/about/index.html')
 def about():
     return render_template('about.html')
 
