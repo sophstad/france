@@ -92,7 +92,7 @@
       <p class="bold mb1">Honorable Mentions</p>
       <p>
         {% for place, url in honorable_mentions.items() %}
-          <a class="border-bottom" href="{{ url }}">{{ place }}</a>{% if not loop.last %},{% endif %}
+          <a href="{{ url }}" class="border-bottom">{{ place }}</a>{% if not loop.last %},{% endif %}
         {% endfor %}
       </p>
     </div>
