@@ -56,7 +56,7 @@
 <div class="container">
   <div class="clearfix mt2 mb2">
     <div class="col col-12">
-      <p class="bold mb1">What are you doing?</p>
+      <p class="bold mb1">What are you doing?<a href="/france/about#activity-bias">*</a></p>
       <p>
         {% for activity, quantity in activity_dict|dictsort(false, 'value')|reverse %}
           {{ activity }} (<span class="red">{{ quantity }}</span>){% if not loop.last %},{% endif %}
@@ -71,7 +71,7 @@
       {% pie_chart working_chart %}
     </div>
     <div class="col col-6">
-      <p class="bold mb1">What are you listening to?</p>
+      <p class="bold mb1">What are you listening to?<a href="/france/about#music-bias">*</a></p>
       {% bar_chart list_of_ten %}
     </div>
   </div>
