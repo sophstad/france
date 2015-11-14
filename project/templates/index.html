@@ -42,7 +42,12 @@
 </div>
 
 <div class="mt2 mb2">
-  <img src="{{ url_for('static', filename='img/panorama.jpg') }}">
+  <img srcset="{{ url_for('static', filename='img/panorama/large.jpg') }} 1280w,
+                {{ url_for('static', filename='img/panorama/medium.jpg') }} 640w,
+                {{ url_for('static', filename='img/panorama/small.jpg') }} 320"
+        sizes="100vw"
+        src="{{ url_for('static', filename='img/panorama/large.jpg') }}"
+        alt="Parisian apartment panoramic view" />
     
   <div class="container">
     <div class="clearfix">
