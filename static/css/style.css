@@ -30,6 +30,16 @@ a:hover {
   max-width: 58em;
 }
 
+/* Temperature hover states */
+.hover:hover {
+  font-size: 0;
+}
+
+.hover:hover:before {
+  content: attr(data-hover);
+  font-size: 4rem;
+}
+
 /* Immutable CSS Classes */
 .bold {
   font-weight: 500;

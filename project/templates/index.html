@@ -24,7 +24,7 @@
       <h1 class="m0 lh1">283</h1><p class="m0 lh1 red">Photos taken</p>
     </div>
     <div class="col col-3 mb2">
-      <h1 class="m0 lh1">{{ temperature_average|round|int }}&#176;F</h1><p class="m0 lh1 red">Average temperature</p>
+      <h1 class="m0 lh1 hover" data-hover="{{ temperatureC_average|round|int }}&#176;C">{{ temperatureF_average|round|int }}&#176;F</h1><p class="m0 lh1 red">Average temperature</p>
     </div>
     <div class="col col-3 mb2">
       <h1 class="m0 lh1">{{ sunny_days|round|int }}%</h1><p class="m0 lh1 red">Sunny days</p>
@@ -44,7 +44,7 @@
 <div class="mt2 mb2">
   <img srcset="{{ url_for('static', filename='img/panorama/large.jpg') }} 1280w,
                 {{ url_for('static', filename='img/panorama/medium.jpg') }} 640w,
-                {{ url_for('static', filename='img/panorama/small.jpg') }} 320"
+                {{ url_for('static', filename='img/panorama/small.jpg') }} 320w"
         sizes="100vw"
         src="{{ url_for('static', filename='img/panorama/large.jpg') }}"
         alt="Parisian apartment panoramic view" />

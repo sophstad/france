@@ -7,7 +7,8 @@ def home():
     yes_working, not_working = working()
     working_chart = [['Yes', yes_working], ['No', not_working]]
     metro_average = metro()
-    temperature_average = temperature()
+    temperatureF_average = temperatureF()
+    temperatureC_average = temperatureC()
     sunny_days = weather()
     coffees = coffee()
     report = reports()
@@ -18,7 +19,8 @@ def home():
     return render_template('index.html',
         working_chart=working_chart,
         metro_average=metro_average,
-        temperature_average=temperature_average,
+        temperatureF_average=temperatureF_average,
+        temperatureC_average=temperatureC_average,
         sunny_days=sunny_days,
         coffees=coffees,
         report=report,

@@ -30,8 +30,8 @@ def working():
                         not_working += 1
     return yes_working, not_working
 
-def temperature():
-    ''' Calculate average temperature '''
+def temperatureF():
+    ''' Calculate average temperature in Fahrenheit '''
     temperature = 0
     day_counter = 0
     for report in data['reports']:
@@ -40,8 +40,21 @@ def temperature():
                 temperature += snapshot['weather']['feelslikeF']
                 day_counter += 1
             except KeyError: pass
-    temperature_average = temperature / float(day_counter)
-    return temperature_average
+    temperatureF_average = temperature / float(day_counter)
+    return temperatureF_average
+
+def temperatureC():
+    ''' Calculate average temperature in Celsius '''
+    temperature = 0
+    day_counter = 0
+    for report in data['reports']:
+        for snapshot in report['snapshots']:
+            try:
+                temperature += snapshot['weather']['feelslikeC']
+                day_counter += 1
+            except KeyError: pass
+    temperatureC_average = temperature / float(day_counter)
+    return temperatureC_average
 
 def weather():
     ''' Total number of clear days '''
