@@ -3,7 +3,7 @@
 ## Structure
 ```
 |-- about/ (home of site's frozen about page)
-|-- project/
+|-- project/ (home of not-frozen files)
     \
     |-- static/
         \
