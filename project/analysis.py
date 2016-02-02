@@ -168,7 +168,7 @@ def locations():
                 except KeyError: pass
 
     for place in location_keys:
-        location_url = 'https://api.foursquare.com/v2/venues/{}?client_id=FH5CJJBXKZNKBHFXW0ZX35LPNGZJFHZAT1FE3HTNNT5RAWI4&client_secret=XAGPXZL23RJMDSNLSVJW01QFF0LDHAN1IRVGIW3MCQQDPW1P&v=20130815'.format(place)
+        location_url = 'https://api.foursquare.com/v2/venues/{}?client_id=AF3QJE5TAPCZQ0EW133MHGY5QDUGLFJNJJTQKKIBWHEROAUW&client_secret=VOGPWRZ3QUNVOIQ51OQFU12R5HSRSVEZRNRHJ2Q2ZXG0MQYE&v=20130815'.format(place)
         api2 = requests.get(location_url).json()
         for location in api2['response']['venue']['categories']:
             location_types.append(str(location['name']))
