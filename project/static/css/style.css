@@ -74,6 +74,9 @@ a:hover {
 .pr2 { padding-right: 2rem; }
 .pl2 { padding-left: 2rem; }
 
+.center {
+  text-align: center;
+}
 .align-right {
   text-align: right;
 }
