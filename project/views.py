@@ -13,7 +13,6 @@ def home():
     coffees = coffee()
     report = reports()
     activity_dict = activities()
-    places = locations()
     list_of_ten = music()
     honorable_mentions = {'Bubble T. Paris': 'http://www.bubbletparis.com', 'Coutume Instituutti': 'https://www.facebook.com/coutumeinstituutti', 'Fondation Louis Vuitton': 'http://www.fondationlouisvuitton.fr/content/flvinternet/en.html'}
     return render_template('index.html',
@@ -26,7 +25,6 @@ def home():
         report=report,
         activity_dict=activity_dict,
         list_of_ten=list_of_ten,
-        places=places,
         honorable_mentions=honorable_mentions,)
 
 @app.route('/about/index.html')
