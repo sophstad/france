@@ -5,10 +5,11 @@
 {% block body %}
 <div class="container">
   <div class="clearfix mt2 mb2">
-    <div class="col col-6 pr2 border-right">
-      <h1 class="lh1 align-right">France<br>by<br>Numbers</h1>
+    <div class="col sm-col-2"><p></p></div>
+    <div class="col sm-col-4 col-12 pr2 border-right">
+      <h1 class="lh1 align-right">France by Numbers</h1>
     </div>
-    <div class="col col-6 pl2 border-left">
+    <div class="col sm-col-6 col-12 pl2 border-left">
       <h1 class="lh1">La France par les Chiffres</h1>
     </div>
     <div class="col col-12 mt2">
@@ -16,29 +17,29 @@
     </div>
   </div>
 
-  <div class="clearfix">
-    <div class="col col-3 mb2">
+  <div class="flex flex-wrap">
+    <div class="col sm-col-3 col-6 mb2">
       <h1 class="m0 lh1">6:47</h1><p class="m0 lh1 red">Hours asleep per night</p>
     </div>
-    <div class="col col-3 mb2">
+    <div class="col sm-col-3 col-6 mb2">
       <h1 class="m0 lh1">{{ metro_average|round(2) }}</h1><p class="m0 lh1 red">Metro rides per day</p>
     </div>
-    <div class="col col-3 mb2">
+    <div class="col sm-col-3 col-6 mb2">
       <h1 class="m0 lh1">283</h1><p class="m0 lh1 red">Photos taken</p>
     </div>
-    <div class="col col-3 mb2">
+    <div class="col sm-col-3 col-6 mb2">
       <h1 class="m0 lh1 hover" data-hover="{{ temperatureC_average|round|int }}&#176;C">{{ temperatureF_average|round|int }}&#176;F</h1><p class="m0 lh1 red">Average temperature</p>
     </div>
-    <div class="col col-3 mb2">
+    <div class="col sm-col-3 col-6 mb2">
       <h1 class="m0 lh1">{{ sunny_days|round|int }}%</h1><p class="m0 lh1 red">Sunny days</p>
     </div>
-    <div class="col col-3 mb2">
+    <div class="col sm-col-3 col-6 mb2">
       <h1 class="m0 lh1">7</h1><p class="m0 lh1 red">Facebook group chats</p>
     </div>
-    <div class="col col-3 mb2">
+    <div class="col sm-col-3 col-6 mb2">
       <h1 class="m0 lh1">{{ coffees|round(1) }}</h1><p class="m0 lh1 red">Coffees per day</p>
     </div>
-    <div class="col col-3 mb2">
+    <div class="col sm-col-3 col-6 mb2">
       <h1 class="m0 lh1">{{ report }}</h1><p class="m0 lh1 red">Total reports</p>
     </div>
 <!--     <div class="col col-3 mb2">
@@ -77,11 +78,11 @@
   </div>
 
   <div class="clearfix">
-    <div class="col col-6">
+    <div class="col sm-col-6 col-12">
       <p class="bold mb1">Are you working?</p>
       {% pie_chart working_chart %}
     </div>
-    <div class="col col-6">
+    <div class="col sm-col-6 col-12">
       <p class="bold mb1">What are you listening to?<a href="/france/about#bias">*</a></p>
       {% bar_chart list_of_ten %}
     </div>
