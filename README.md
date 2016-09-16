@@ -1,7 +1,7 @@
 # France
 
 ## About
-France by Numbers is a site that presents my summer abroad in Paris using data that I gathered while abroad. The data was collected using [Last.fm](https://last.fm), [Reporter](https://www.reporter-app.com), and [Sleep Cycle](http://www.sleepcycle.com), all of which I'd recommend highly.
+France by Numbers is a site that presents my abroad in Paris using data that I gathered while abroad. The data was collected using [Last.fm](https://last.fm), [Reporter](https://www.reporter-app.com), and [Sleep Cycle](http://www.sleepcycle.com), all of which I'd recommend highly.
 
 ## Structure
 ```
